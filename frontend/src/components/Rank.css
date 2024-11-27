@@ -1,0 +1,15 @@
+.rank-container {
+  width: 300px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rank-list {
+  list-style-type: decimal;
+  padding-left: 20px;
+  font-family: "Nanum", sans-serif;
+  color: #333;
+}

@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Nanum";
+  src: url("./fonts/Nanum.ttf") format("truetype");
+}
+
+.linegraph-container {
+  width: 612px;
+  height: 350px;
+  border-radius: 5px;
+  border: 0px solid #000;
+  margin: 20px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.no-data {
+  text-align: center;
+}
+
+.no-data-text {
+  font-family: "Nanum", Arial, sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}

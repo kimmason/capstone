@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "Nanum";
+  src: url("../fonts/Nanum.ttf") format("truetype");
+}
+
+.wordcloud-rank-wrapper {
+  display: flex;
+  justify-content: center; /* 전체 WordCloudRank 컴포넌트를 화면 중앙에 배치 */
+  align-items: flex-start;
+  gap: 50px; /* WordCloud 컴포넌트 간의 간격 */
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: calc(100vh - 220px); /* Header, Footer를 제외한 높이 계산 */
+}
+
+.wordcloud-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* WordCloud와 Rank 컴포넌트 사이의 간격 */
+}
+
+.wordcloud-title-p,
+.wordcloud-title-N,
+.wordcloud-title-n {
+  font-size: 30px;
+  color: white;
+  background-color: rgb(49, 48, 48);
+  font-family: "Nanum", sans-serif;
+  border-radius: 30px;
+  padding: 10px 50px;
+  text-align: center;
+  margin-bottom: -10px;
+}
+
+.wordcloud-title-p {
+  color: rgb(83, 162, 236);
+}
+
+.wordcloud-title-N {
+  color: rgb(46, 243, 121);
+}
+
+.wordcloud-title-n {
+  color: rgb(250, 17, 17);
+}
