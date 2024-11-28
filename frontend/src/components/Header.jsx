@@ -13,11 +13,11 @@ const Header = ({ onSearch }) => {
 
   const handleSearch = () => {
     if (!startDate || !endDate) {
-      alert("기간을 설정하십시오");
+      alert("기간을 설정하세요");
       return;
     }
     if (keyword.trim().length < 2) {
-      alert("두 글자 이상을 입력하세요");
+      alert("검색어는 두 글자 이상으로 입력하세요");
       return;
     }
     if (!platform) {
