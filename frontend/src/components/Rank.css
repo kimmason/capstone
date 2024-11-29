@@ -13,10 +13,14 @@
 }
 
 .rank-word {
-  background-color: rgb(153, 209, 247);
+  background-color: rgb(163, 217, 253);
   border-radius: 25px;
-  padding: 10px;
+  padding: 20px;
   margin-left: -15px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   list-style: none;
+}
+
+.rank-title {
+  margin-right: 150px;
 }

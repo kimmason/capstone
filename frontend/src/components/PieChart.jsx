@@ -34,6 +34,7 @@ const PieChart = ({ hasData }) => {
 
   return (
     <div className="circlechart-container">
+      <h2 className="piechart-title">감정 비율</h2>
       <ResponsivePie
         data={data}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}

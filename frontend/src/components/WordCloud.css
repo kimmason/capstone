@@ -1,5 +1,4 @@
 .wordcloud-container {
-  border: 0px solid #000;
   border-radius: 5px;
   width: 100%; /* 부모 컨테이너에 맞추도록 설정 */
   height: 100%; /* 부모 컨테이너에 맞추도록 설정 */
@@ -8,18 +7,22 @@
   align-items: center;
   justify-content: center;
   background-color: white;
+  margin-top: -50px;
 }
 
 .wordcloud-container.large {
-  width: 60%; /* 사이즈를 부모 컨테이너에 맞추도록 설정 */
-  height: 90%; /* 사이즈를 부모 컨테이너에 맞추도록 설정 */
+  width: 100%; /* 사이즈를 부모 컨테이너에 맞추도록 설정 */
+  height: 100%; /* 사이즈를 부모 컨테이너에 맞추도록 설정 */
 }
 
 .wordcloud-wrapper {
+  border: 2px solid #000;
+  border-radius: 15px;
   width: 100%;
-  height: 100%;
+  height: 75%;
   display: flex;
-  margin-left: 30px;
+  margin-left: 0px;
+  padding-top: 30px;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;

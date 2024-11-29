@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 15px;
-  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1); */
   box-sizing: border-box;
   padding: 0px; /* 전체 padding 설정 */
   z-index: 800;
@@ -41,5 +41,6 @@
 }
 
 .menu-button.active {
-  background-color: rgb(237, 246, 250); /* 활성화된 버튼의 배경색 */
+  background-color: rgb(247, 250, 255); /* 활성화된 버튼의 배경색 */
+  color: rgb(39, 148, 250);
 }

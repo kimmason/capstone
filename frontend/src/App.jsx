@@ -79,7 +79,7 @@ function App() {
             <LineGraph data={lineGraphData} />
           </div>
           <div className="comments-container">
-            <Comments />
+            <h3>Comments Container</h3>
           </div>
         </div>
       )}

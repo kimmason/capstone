@@ -11,6 +11,7 @@ const WordCloudRank = ({ hasData }) => {
         <WordCloud title="긍정" hasData={hasData} size="large" />
       </div>
       <div className="rank-content">
+        <h2 className="rank-title">키워드 순위</h2>
         <Rank />
       </div>
     </div>

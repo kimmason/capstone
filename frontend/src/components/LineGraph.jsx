@@ -13,6 +13,7 @@ const LineGraph = ({ data }) => {
 
   return (
     <div className="linegraph-container">
+      <h3 className="linegraph-title">감정 변화 추이</h3>
       <ResponsiveLine
         data={data}
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
