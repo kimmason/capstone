@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "./components/Header";
 import SideMenu from "./components/SideMenu";
 import DefaultImage from "./components/images/default-img.png";
@@ -12,11 +12,44 @@ function App() {
   const [lineGraphData, setLineGraphData] = useState([]);
   const [selectedEmotion, setSelectedEmotion] = useState("긍정");
   const [hasData, setHasData] = useState(false);
-  const [activeButton, setActiveButton] = useState(null);
+  const [activeButton, setActiveButton] = useState(0);
+
+  // Refs for each section
+  const wordCloudRef = useRef(null);
+  const chartRef = useRef(null);
+  const commentsRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const wordCloudPosition = wordCloudRef.current.offsetTop;
+      const chartPosition = chartRef.current.offsetTop;
+      const commentsPosition = commentsRef.current.offsetTop;
+
+      const chartHeight = chartRef.current.offsetHeight;
+
+      if (
+        scrollPosition >= wordCloudPosition &&
+        scrollPosition < chartPosition - chartHeight / 2
+      ) {
+        setActiveButton(0); // WordCloudRank section
+      } else if (
+        scrollPosition >= chartPosition - chartHeight / 2 &&
+        scrollPosition < commentsPosition - chartHeight / 2
+      ) {
+        setActiveButton(1); // Charts section
+      } else if (scrollPosition >= commentsPosition - chartHeight / 2) {
+        setActiveButton(2); // Comments section
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleSearch = (startDate, endDate) => {
     setHasData(true);
-    setActiveButton(0);
+    setActiveButton(0); // Default active button
 
     const positive = [10, 20, 15, 25];
     const neutral = [15, 10, 20, 30];
@@ -57,7 +90,11 @@ function App() {
       <Header
         onSearch={(startDate, endDate) => handleSearch(startDate, endDate)}
       />
-      <SideMenu activeButton={activeButton} setActiveButton={setActiveButton} />
+      <SideMenu
+        activeButton={activeButton}
+        setActiveButton={setActiveButton}
+        refs={{ wordCloudRef, chartRef, commentsRef }}
+      />
       {!hasData ? (
         <div className="default-view">
           <img src={DefaultImage} alt="Default" className="default-img" />
@@ -65,20 +102,22 @@ function App() {
         </div>
       ) : (
         <div className="grid-container">
-          <div className="wordcloud-rank">
+          <div className="wordcloud-rank" ref={wordCloudRef}>
             <WordCloudRank
               selectedEmotion={selectedEmotion}
               setSelectedEmotion={setSelectedEmotion}
               hasData={hasData}
             />
           </div>
-          <div className="pie-chart">
-            <PieChart hasData={hasData} />
+          <div className="charts-container" ref={chartRef}>
+            <div className="pie-chart">
+              <PieChart hasData={hasData} />
+            </div>
+            <div className="line-graph">
+              <LineGraph data={lineGraphData} />
+            </div>
           </div>
-          <div className="line-graph">
-            <LineGraph data={lineGraphData} />
-          </div>
-          <div className="comments-section">
+          <div className="comments-section" ref={commentsRef}>
             <Comments />
           </div>
         </div>
