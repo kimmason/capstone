@@ -1,40 +1,138 @@
-/* DetailComments.css */
 @font-face {
-  font-family: "Nanum";
-  src: url("./fonts/Nanum.ttf") format("truetype");
+  font-family: "hana";
+  src: url("../fonts/hana.ttf") format("truetype");
 }
 
 .comments-container {
-  width: 95%;
-  height: 400px;
-  overflow-y: auto;
-  border-radius: 25px;
-  padding: 20px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgb(255, 255, 255);
-}
-
-.comment {
-  padding: 10px;
-  box-shadow: 0px 0.5px 0.5px 0.5px rgba(173, 173, 173, 0.747);
   width: 100%;
-  color: #000000;
-  font-family: "Nanum", sans-serif;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 25px;
+  font-family: "hana", sans-serif;
+  box-sizing: border-box;
 }
 
-.comments-container::-webkit-scrollbar {
-  width: 10px;
+.comment-title {
+  font-size: 1.5em;
+  margin-bottom: 40px;
+  text-align: left;
+  margin-left: 20px;
 }
 
-.comments-container::-webkit-scrollbar-thumb {
-  background-color: #b4b3b3;
-  border-radius: 3px;
+.comment-header {
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr 0.6fr; /* 피드백 영역을 줄임 */
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: bold;
 }
 
-.comments-container::-webkit-scrollbar-track {
+.comment-row {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr 0.6fr; /* 피드백 영역을 줄임 */
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: bold;
+}
+
+.comment-row {
+  font-weight: normal;
+}
+
+.comment-row:last-child {
+  border-bottom: none;
+}
+
+.col {
+  padding: 0 10px;
+}
+
+/* 감정에 따른 배경색 적용 - 텍스트에만 적용 */
+.sentiment-container {
+  display: inline-block; /* 텍스트 주변에만 배경을 적용하기 위해 사용 */
+  padding: 3px 5px; /* 텍스트 주변의 여백 조절 */
+  border-radius: 5px; /* 부드러운 모서리 */
+}
+
+.sentiment-긍정 {
+  background-color: rgb(240, 246, 255);
+}
+
+.sentiment-중립 {
+  background-color: rgb(237, 255, 233);
+}
+
+.sentiment-부정 {
+  background-color: rgb(255, 231, 243);
+}
+
+.feedback-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 5px;
+}
+
+.feedback-col {
+  position: relative;
+}
+
+.feedback-dropdown {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.feedback-item {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.feedback-item:hover {
   background-color: #f0f0f0;
-  border-radius: 3px;
+}
+
+.comment-content {
+  margin-bottom: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.pagination-btn {
+  padding: 5px 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-btn:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #dfe6e9;
+}
+
+.pagination-info {
+  margin: 0 20px;
+  font-size: 1em;
 }

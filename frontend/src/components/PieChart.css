@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "hana";
+  src: url("./components/fonts/hana.ttf") format("truetype");
+}
+
 .circlechart-container {
   display: flex;
   flex-direction: column;
@@ -19,6 +24,7 @@
   font-size: 1.5em;
   font-weight: bold;
   margin: 0;
+  font-family: "hana", sans-serif;
 }
 
 .no-data {

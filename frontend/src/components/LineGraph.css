@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Nanum";
-  src: url("./fonts/Nanum.ttf") format("truetype");
+  font-family: "hana";
+  src: url("./fonts/hana.ttf") format("truetype");
 }
 
 .linegraph-container {
@@ -23,6 +23,7 @@
   top: 0px;
   left: 50px;
   font-size: 1.5em;
+  font-family: "hana", sans-serif;
   font-weight: bold;
   margin: 0;
 }

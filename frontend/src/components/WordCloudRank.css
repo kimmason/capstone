@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "hana";
+  src: url("./components/fonts/hana.ttf") format("truetype");
+}
+
 .wordcloud-rank-wrapper {
   display: flex;
   width: 95%;
@@ -10,6 +15,7 @@
   gap: 30px;
   justify-content: space-between;
   overflow: hidden; /* 자식 컴포넌트가 밖으로 나가지 않도록 설정 */
+  font-family: "hana", sans-serif;
 }
 
 .wordcloud-content {

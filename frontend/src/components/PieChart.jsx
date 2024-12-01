@@ -1,8 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./PieChart.css";
 import { ResponsivePie } from "@nivo/pie";
 
 const PieChart = ({ hasData }) => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `${import.meta.env.BASE_URL}data/data-file.csv`
+        );
+        const text = await response.text();
+        const rows = text.split("\n").map((row) => row.split(","));
+
+        // Extract relevant ratios (5th column)
+        const positiveRatio = parseFloat(rows[1][4]) * 100; // 2번째 행, 5번째 열
+        const neutralRatio = parseFloat(rows[2][4]) * 100; // 3번째 행, 5번째 열
+        const negativeRatio = parseFloat(rows[3][4]) * 100; // 4번째 행, 5번째 열
+
+        setData([
+          { id: "긍정", label: "긍정", value: positiveRatio, color: "#316dec" },
+          { id: "중립", label: "중립", value: neutralRatio, color: "#0f9b0f" },
+          { id: "부정", label: "부정", value: negativeRatio, color: "#e93434" },
+        ]);
+      } catch (error) {
+        console.error("Error loading CSV data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   if (!hasData) {
     return (
       <div className="circlechart-container no-data">
@@ -10,27 +39,6 @@ const PieChart = ({ hasData }) => {
       </div>
     );
   }
-
-  const data = [
-    {
-      id: "긍정",
-      label: "긍정",
-      value: 45,
-      color: "#316dec",
-    },
-    {
-      id: "중립",
-      label: "중립",
-      value: 30,
-      color: "#0f9b0f",
-    },
-    {
-      id: "부정",
-      label: "부정",
-      value: 25,
-      color: "#e93434",
-    },
-  ];
 
   return (
     <div className="circlechart-container">
