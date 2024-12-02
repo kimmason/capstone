@@ -35,7 +35,7 @@ function App() {
         setActiveButton(0);
       } else if (
         scrollPosition >= chartPosition - chartHeight / 2 &&
-        scrollPosition < commentsPosition - chartHeight / 1.4
+        scrollPosition < commentsPosition - chartHeight / 2
       ) {
         setActiveButton(1);
       } else if (scrollPosition >= commentsPosition - chartHeight / 2) {

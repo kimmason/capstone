@@ -4,6 +4,7 @@
 }
 
 .comments-container {
+  position: relative;
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
@@ -11,6 +12,58 @@
   border-radius: 25px;
   font-family: "hana", sans-serif;
   box-sizing: border-box;
+}
+
+.comment-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.comments-checkbox-panel {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.comments-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0.5px 0.5px 4px 1px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.comments-checkbox-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.comments-checkbox-circle.positive {
+  background-color: #316dec;
+}
+
+.comments-checkbox-circle.neutral {
+  background-color: #0f9b0f;
+}
+
+.comments-checkbox-circle.negative {
+  background-color: #e93434;
+}
+
+.comments-checkbox.selected {
+  border: 2px solid #333;
 }
 
 .comment-title {

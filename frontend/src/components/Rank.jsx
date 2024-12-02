@@ -6,7 +6,7 @@ const Rank = ({ selectedSentiment }) => {
     if (selectedSentiment === "긍정") {
       return "rgb(186, 227, 255)";
     } else if (selectedSentiment === "중립") {
-      return "rgb(198, 253, 185)";
+      return "rgb(164, 255, 144)";
     } else if (selectedSentiment === "부정") {
       return "rgb(255, 231, 243)";
     }
