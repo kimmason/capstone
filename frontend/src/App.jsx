@@ -30,16 +30,16 @@ function App() {
 
       if (
         scrollPosition >= wordCloudPosition &&
-        scrollPosition < chartPosition - chartHeight / 2
+        scrollPosition < chartPosition - chartHeight / 1.2
       ) {
-        setActiveButton(0); // WordCloudRank section
+        setActiveButton(0);
       } else if (
         scrollPosition >= chartPosition - chartHeight / 2 &&
-        scrollPosition < commentsPosition - chartHeight / 2
+        scrollPosition < commentsPosition - chartHeight / 1.4
       ) {
-        setActiveButton(1); // Charts section
+        setActiveButton(1);
       } else if (scrollPosition >= commentsPosition - chartHeight / 2) {
-        setActiveButton(2); // Comments section
+        setActiveButton(2);
       }
     };
 
@@ -55,8 +55,8 @@ function App() {
     const neutral = [15, 10, 20, 30];
     const negative = [5, 10, 5, 10];
 
-    const start = startDate ? new Date(startDate) : new Date("2023-01-01");
-    const end = endDate ? new Date(endDate) : new Date("2023-04-01");
+    const start = startDate ? new Date(startDate) : new Date("2024-01-01");
+    const end = endDate ? new Date(endDate) : new Date("2024-12-01");
     const interval = Math.floor((end - start) / 3);
 
     const period = Array.from({ length: 4 }, (_, i) => {
