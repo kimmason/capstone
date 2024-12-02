@@ -41,7 +41,7 @@
 }
 
 .menu-button.active {
-  background-color: rgb(241, 245, 253); /* 활성화된 버튼의 배경색 */
+  background-color: rgb(245, 248, 254); /* 활성화된 버튼의 배경색 */
   color: rgb(39, 148, 250);
 }
 
