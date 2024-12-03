@@ -14,7 +14,7 @@ const Comments = () => {
   const [feedbackMenuOpen, setFeedbackMenuOpen] = useState(null);
 
   const comments = Array.from({ length: totalComments }, (_, i) => ({
-    date: `2023-11-${String(i + 1).padStart(2, "0")}`,
+    date: `2024-11-${String(i + 1).padStart(2, "0")}`,
     content: `댓글 내용 ${i + 1}`,
     sentiment: i % 3 === 0 ? "긍정" : i % 3 === 1 ? "중립" : "부정",
   }));
@@ -151,7 +151,7 @@ const Comments = () => {
           </div>
         ))}
       </div>
-      {totalPages >= 1 && ( // 페이지 수가 1보다 클 때만 페이지네이션 표시
+      {totalPages >= 1 && (
         <div className="pagination">
           <button
             className="pagination-btn"
